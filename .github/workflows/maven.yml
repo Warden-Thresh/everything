@@ -19,6 +19,6 @@ jobs:
       run: |
         cp common/target/common-0.0.1-SNAPSHOT.jar common/docker/
         cd common/docker
-        docker build . --file Dockerfile --tag registry.cn-hangzhou.aliyuncs.com/wardeny/everything:$(date +%s)
+        docker build . --file Dockerfile --tag registry.cn-hangzhou.aliyuncs.com/wardeny/everything:latest
         docker login --username=1570263943@qq.com --password=${{secrets.ALI_DOCKER_PASSWORD}} registry.cn-hangzhou.aliyuncs.com
-        docker push registry.cn-hangzhou.aliyuncs.com/wardeny/everything:$(date +%s)
+        docker push registry.cn-hangzhou.aliyuncs.com/wardeny/everything:latest
