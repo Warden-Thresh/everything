@@ -15,7 +15,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
 
     name: test
-    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${DB_NAME:everything}?serverTimezone=UTC&useUnicode=true&amp;characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${DB_NAME:everything}?useUnicode=true&useSSL=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:admin}
     # 使用druid数据源
