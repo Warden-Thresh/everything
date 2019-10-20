@@ -23,15 +23,4 @@ public class CommonApplicationTests {
     public void contextLoads() {
         System.out.println(userRepository.findByUserName("A"));
     }
-
-    @Test
-    public void addUser() {
-        List<User> list = new ArrayList<>();
-        for (int i = 0; i < 10000; i++) {
-            User user = new User();
-            user.setUserName(UUID.randomUUID().toString());
-            list.add(user);
-        }
-        userRepository.saveAll(list);
-    }
 }
