@@ -1,0 +1,47 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+  cache:
+    # spring cache 缓存类型为redis  也可以是其他的实现
+    type: redis
+  datasource:
+    a:
+      url: jdbc:mysql:///everything?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+      username: root
+      password: admin
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    name: test
+    url: jdbc:mysql:///everything?serverTimezone=UTC&useUnicode=true&amp;characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    username: root
+    password: admin
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+#      connection-init-sqls: ["SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"]
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: true
+    properties:
+      hibernate:
+        dialect: com.warden.common.configuration.MySQL5InnoDBDialectUtf8mb4
+beetsql:
+  sqlPath: /sql
+  ds:
+    a:
+      basePackage: com.warden.common.dao
+  mutiple:
+    datasource: a
+
+beetl-beetlsql:
+  dev: ${SHOW_SQL:true}
+
+logging:
+  level:
+    org.beetl.sql: ${LOGGER_LEVEL:info}
