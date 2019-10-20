@@ -17,7 +17,7 @@ jobs:
       run: mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
     - name: build docker
       env:
-        ALI_DOCKER_PASSWORD: ${{ secrets.ALI_DOCKER_PASSWORD }}
+        super_secret: ${{ secrets.ALI_DOCKER_PASSWORD }}
       run: |
         cp common/target/common-0.0.1-SNAPSHOT.jar common/docker/
         cd common/docker
