@@ -25,6 +25,8 @@ jobs:
       run: |
         docker login --username=${{secrets.DOCKERHUB_USERNAME}} --password=${{secrets.DOCKERHUB_PASSWORD}}
         docker push warden111/everything:latest
+    - name: webhook
+      run: curl https://portainer.yangjiaying.xyz/api/webhooks/4a4bc17a-6c70-48b0-9d02-f2af5e99983e -X POST
 #    - name: push ali docker
 #      run: |
 #        docker login --username=${{secrets.ALI_DOCKER_USERNAME}} --password=${{secrets.ALI_DOCKER_PASSWORD}} registry.cn-hangzhou.aliyuncs.com
